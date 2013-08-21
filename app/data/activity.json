@@ -1,9 +1,44 @@
 [
 	{
-		"name": "root",
+		"name": "Hardware Component Identification",
 		"type": "simple",
 		"sub-type": "activity",
 		"level": 1,
 		"position": 1
+	},
+	{
+		"name": "Main Components",
+		"type": "complex",
+		"sub-type": "group",
+		"level": 2,
+		"position": 1,
+		"children" : 
+			[
+				{
+					"name": "Bus",
+					"type": "simple",
+					"sub-type": "activity"
+				},
+				{
+					"name": "CPU",
+					"type": "simple",
+					"sub-type": "activity"
+				},
+				{
+					"name": "Devices",
+					"type": "simple",
+					"sub-type": "activity"
+				},
+				{
+					"name": "Device Controller",
+					"type": "simple",
+					"sub-type": "activity"
+				},
+				{
+					"name": "Memmory",
+					"type": "simple",
+					"sub-type": "activity"
+				}
+			]
 	}
 ]

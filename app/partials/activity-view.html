@@ -5,7 +5,15 @@
 
       <ul class="activities">
         <li ng-repeat="activity in activities">
-          <a href="#">{{activity.name}}</a>
+          {{ activity.sub-type }}
+          <a href="#"> {{ activity.name }} </a>
+          
+          <ul class="children">
+            <li ng-repeat="child in activity.children">
+              <a href="#">{{ child.name }}</a>
+            </li>
+          </ul>
+
         </li>
       </ul>
 
