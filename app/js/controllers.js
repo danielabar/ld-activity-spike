@@ -1,6 +1,6 @@
 function ActivityViewCtrl($scope, $http) {
-	$http.get('data/activity.json').success(function(data) {
-    	$scope.activities = data;
+	$http.get('data/activity2.json').success(function(data) {
+    	$scope.levels = data;
   	});  
 }
 

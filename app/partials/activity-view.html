@@ -3,17 +3,19 @@
     <div class="span10">
       <!--Body content-->
 
-      <ul class="activities">
-        <li ng-repeat="activity in activities">
-          {{ activity.sub-type }}
-          <a href="#"> {{ activity.name }} </a>
-          
-          <ul class="children">
-            <li ng-repeat="child in activity.children">
-              <a href="#">{{ child.name }}</a>
+      <ul class="levels">
+        <li ng-repeat="level in levels">
+          Level: {{ level.levelnum }}
+          <ul class="nodes">
+            <li ng-repeat="node in level.nodes">
+              Type: {{ node.subtype }}, Position: {{ node.position }}, Name: {{ node.name }}
+              <ul class="group-children">
+                <li ng-repeat="child in node.children">
+                  Name: {{ child.name }}
+                </li>
+              </ul>
             </li>
           </ul>
-
         </li>
       </ul>
 
