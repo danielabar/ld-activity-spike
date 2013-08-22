@@ -19,7 +19,7 @@ Before going through the work of creating a real service to generate the Activit
 
 * Edit [activity.json](app/data/activity.json) to see how changes in the data may affect the html.
 
-Data was inspired from this [course outline](sample course outline: https://scs.senecac.on.ca/course/hwd101)
+Data was inspired from this [course outline](https://scs.senecac.on.ca/course/hwd101)
 
 * If in doubt about whether changes to the json file are valid, run it through the [linter](http://jsonlint.com/)
 
