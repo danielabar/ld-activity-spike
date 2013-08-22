@@ -12,10 +12,14 @@
               
               <div ng-class="{ groupBox4: node.children, actBox: !node.children }">
                 
-                <span ng-show="!node.children" class="actId">{{ node.subtype }}</span>
+                <!-- If it's a group:  -->
                 <div ng-show="node.children" class="groupName">{{ node.name }}</div>
+
+                <!-- If it's NOT a group:  -->
+                <span ng-show="!node.children" class="actId">{{ node.subtype }}</span>
                 <h6 ng-show="!node.children" class="actName">{{ node.name }}</h6>
 
+                <!-- ASSUMPTION: Only groups can have children -->
                 <div ng-repeat="child in node.children">
                   <div class="actBox">
                     <span class="actId">{{ child.subtype }}</span>
@@ -23,7 +27,7 @@
                   </div>
                 </div><!-- End Children -->
 
-              </div><!-- End Activity Box -->
+              </div><!-- End Activity or Group Box -->
 
             </div>
 
