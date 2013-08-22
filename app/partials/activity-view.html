@@ -11,9 +11,18 @@
             <div ng-repeat="node in level.nodes">
               
               <div ng-class="{ groupBox4: node.children, actBox: !node.children }">
+                
                 <span ng-show="!node.children" class="actId">{{ node.subtype }}</span>
                 <div ng-show="node.children" class="groupName">{{ node.name }}</div>
                 <h6 ng-show="!node.children" class="actName">{{ node.name }}</h6>
+
+                <div ng-repeat="child in node.children">
+                  <div class="actBox">
+                    <span class="actId">{{ child.subtype }}</span>
+                    <h6 class="actName">{{ child.name }}</h6>
+                  </div>
+                </div><!-- End Children -->
+
               </div><!-- End Activity Box -->
 
             </div>
