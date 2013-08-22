@@ -10,7 +10,7 @@
             
             <div ng-repeat="node in level.nodes">
               
-              <div ng-class="{ groupBox4: node.children, actBox: !node.children }">
+              <div ng-class="navClass(node)">
                 
                 <!-- If it's a group:  -->
                 <div ng-show="node.children" class="groupName">{{ node.name }}</div>
