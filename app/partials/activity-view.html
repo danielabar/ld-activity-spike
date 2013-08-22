@@ -1,8 +1,29 @@
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span10">
-      <!--Body content-->
 
+      <div id="contentBody">
+
+        <div ng-repeat="level in levels">
+          
+          <div class="levelBox">
+            
+            <div ng-repeat="node in level.nodes">
+              
+              <div class="actBox">
+                <span class="actId">{{ node.subtype }}</span>
+                <h6 class="actName">{{ node.name }}</h6>
+              </div><!-- End Activity Box -->
+
+            </div>
+
+          </div><!-- End Level Box -->
+
+        </div><!-- End all Levels -->
+
+      </div>
+
+      <!-- DEBUG -->
       <ul class="levels">
         <li ng-repeat="level in levels">
           Level: {{ level.levelnum }}
