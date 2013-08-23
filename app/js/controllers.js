@@ -3,9 +3,17 @@ function ActivityViewCtrl($scope, $http) {
     	$scope.levels = data;
   	}); 
 
+	// FIXME Conditionals could be improved
   	$scope.navClass = function (node) {
   		if (node.children) {
-  			return "groupBox4";
+  			if (node.children.length >= 4)
+  				return "groupBox4";
+  			if (node.children.length >= 3)
+  				return "groupBox3";
+  			if (node.children.length >= 2)
+  				return "groupBox2";
+  			if (node.children.lenght >= 1)
+  				return "groupBox1";
   		}
   		return "actBox";
     };  
