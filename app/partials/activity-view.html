@@ -1,59 +1,70 @@
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span10">
 
-      <div id="contentBody">
 
-        <div ng-repeat="level in levels">
-          
-          <div class="levelBox">
-            
-            <div ng-repeat="node in level.nodes">
-              
-              <div ng-class="navClass(node)">
-                
-                <!-- If it's a group:  -->
-                <div ng-show="node.children" class="groupName">{{ node.name }}</div>
 
-                <!-- If it's NOT a group:  -->
-                <span ng-show="!node.children" class="actId">{{ node.subtype }}</span>
-                <h6 ng-show="!node.children" class="actName">{{ node.name }}</h6>
 
-                <!-- ASSUMPTION: Only groups can have children -->
-                <div ng-repeat="child in node.children">
-                  <div class="actBox">
-                    <span class="actId">{{ child.subtype }}</span>
-                    <h6 class="actName">{{ child.name }}</h6>
-                  </div>
-                </div><!-- End Children -->
 
-              </div><!-- End Activity or Group Box -->
+
+<div class="container">
+    <div class="row">
+        <div >
+
+            <div id="contentBody">
+
+                <div ng-repeat="level in levels">
+
+                    <div class="levelBox">
+
+                        <div ng-repeat="node in level.nodes">
+
+                            <div ng-class="navClass(node)">
+
+                                <!-- If it's a group:  -->
+                                <ul ng-show="node.children" class="children">
+                                    <div class="groupName">{{ node.name }}</div>
+                                    <div class="clearfix"></div>
+
+                                    <li ng-repeat="child in node.children">
+                                        <div class="childBox">
+                                            <span class="actId">{{ child.subtype }}</span>
+                                            <h6 class="actName">{{ child.name }}</h6>
+                                        </div>
+                                    </li><!-- End Children -->
+                                </ul>
+
+                                <!-- If it's NOT a group:  -->
+                                <span ng-show="!node.children" class="actId">{{ node.subtype }}</span>
+                                <h6 ng-show="!node.children" class="actName">{{ node.name }}</h6>
+                                <!-- ASSUMPTION: Only groups can have children -->
+
+                            </div><!-- End Activity or Group Box -->
+
+                        </div>
+
+                    </div><!-- End Level Box -->
+
+                </div><!-- End all Levels -->
 
             </div>
 
-          </div><!-- End Level Box -->
-
-        </div><!-- End all Levels -->
-
-      </div>
-
-      <!-- DEBUG -->
-      <ul class="levels">
-        <li ng-repeat="level in levels">
-          Level: {{ level.levelnum }}
-          <ul class="nodes">
-            <li ng-repeat="node in level.nodes">
-              Type: {{ node.subtype }}, Position: {{ node.position }}, Name: {{ node.name }}
-              <ul class="group-children">
-                <li ng-repeat="child in node.children">
-                  Name: {{ child.name }}
+            <!-- DEBUG -->
+            <ul class="levels">
+                <li ng-repeat="level in levels">
+                    Level: {{ level.levelnum }}
+                    <ul class="nodes">
+                        <li ng-repeat="node in level.nodes">
+                            Type: {{ node.subtype }}, Position: {{ node.position }}, Name: {{ node.name }}
+                            <ul class="group-children">
+                                <li ng-repeat="child in node.children">
+                                    Name: {{ child.name }}
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+            </ul>
 
+        </div>
     </div>
-  </div>
 </div>
+
+
