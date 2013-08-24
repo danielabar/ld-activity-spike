@@ -10,13 +10,13 @@
 
             <div id="contentBody">
 
-                <div ng-repeat="level in levels">
+                <!-- <div ng-repeat="level in levels"> -->
 
-                    <div class="levelBox">
+                    <div ng-repeat="level in levels" class="levelBox">
 
-                        <div ng-repeat="node in level.nodes">
+                        <!-- <div ng-repeat="node in level.nodes"> -->
 
-                            <div ng-class="navClass(node)">
+                            <div ng-repeat="node in level.nodes" ng-class="navClass(node)">
 
                                 <!-- If it's a group:  -->
                                 <ul ng-show="node.children" class="children">
@@ -38,11 +38,11 @@
 
                             </div><!-- End Activity or Group Box -->
 
-                        </div>
+                        <!-- </div> -->
 
                     </div><!-- End Level Box -->
 
-                </div><!-- End all Levels -->
+                <!--</div>--><!-- End all Levels -->
 
             </div>
 
