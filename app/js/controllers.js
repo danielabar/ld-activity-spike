@@ -11,7 +11,7 @@ function ActivityViewCtrl($scope, $http) {
   			if (node.children.length >= 3)
   				return "groupBox3";
   			if (node.children.length >= 2)
-  				return "groupBox2";
+  				return "groupBox1";
   			if (node.children.lenght >= 1)
   				return "groupBox1";
   		}
